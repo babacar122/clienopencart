@@ -17,8 +17,6 @@ class OpenCartApp:
             user="patricia",
             password="passer",
             database="opencart"
-            self.ongoing_transactions_tab = OngoingTransactionsTab(self.notebook, self.db)
-            self.list_catalogues_tab = CatalogsTab(self.notebook, self.db)
         )
 
         # Creation ds onglets (une par option)
@@ -28,7 +26,8 @@ class OpenCartApp:
         self.web_access_tab = WebAccessTab(self.notebook, self.db)
         self.block_sales_tab = BlockSalesTab(self.notebook, self.db)
         self.connected_clients_tab = ConnectedClientsTab(self.notebook, self.db)
-        
+        self.ongoing_transactions_tab = OngoingTransactionsTab(self.notebook, self.db)
+        self.list_catalogues_tab = CatalogsTab(self.notebook, self.db)
 
     def run(self):
         self.root.mainloop()
