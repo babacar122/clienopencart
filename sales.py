@@ -22,4 +22,8 @@ class BlockSalesTab:
         query = "UPDATE oc_user SET status = 'blocked' WHERE user_id = %s"
         cursor.execute(query, (user_id,))
         self.db.commit()
+
+        self.block_sales_result_label.config(text=f"Ventes bloquer pour l'utilisateur: {user_id}")
+        cursor.close()
+
         
